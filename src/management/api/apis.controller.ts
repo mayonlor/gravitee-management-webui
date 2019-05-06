@@ -80,7 +80,7 @@ export class ApisController {
         if (query !== undefined && query !== previousQuery) {
           this.search();
         }
-      }, 300);
+      }, Constants.portal.searchDelayInMilliseconds);
     });
   }
 
