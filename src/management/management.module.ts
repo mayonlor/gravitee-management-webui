@@ -331,6 +331,7 @@ import AddTopApiDialogController from '../management/configuration/top-apis/dial
 import DeleteTopApiDialogController from '../management/configuration/top-apis/dialog/delete.top-api.dialog.controller';
 import ApiProxyController from "./api/proxy/apiProxy.controller";
 import PortalSettingsComponent from "./configuration/portal/portal.component";
+import ManagementSettingsComponent from "./configuration/management/management.component";
 import DialogAddPathMappingController from "./api/analytics/pathMappings/modal/add-pathMapping.dialog.controller";
 import DialogImportPathMappingController from "./api/analytics/pathMappings/modal/import-pathMapping.dialog.controller";
 
@@ -386,6 +387,7 @@ import ClientRegistrationProviderController from '../management/configuration/ap
 import angular = require('angular');
 
 import ngInfiniteScroll = require('ng-infinite-scroll');
+import DialogReviewController from "./api/review/reviewDialog.controller";
 
 (<any>window).traverse = traverse;
 
@@ -596,6 +598,7 @@ angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMa
   .controller('AddTopApiDialogController', AddTopApiDialogController)
   .controller('DeleteTopApiDialogController', DeleteTopApiDialogController)
   .controller("MoveToFolderDialogController", MoveToFolderDialogController)
+  .controller('DialogReviewController', DialogReviewController)
   .service('ApplicationService', ApplicationService)
   .service('ApiService', ApiService)
   .service('DocumentationService', DocumentationService)
@@ -648,6 +651,7 @@ angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMa
   .component('roleMembers', RoleMembersComponent)
   .component('topApis', TopApisComponent)
   .component('portalSettings', PortalSettingsComponent)
+  .component('managementSettings', ManagementSettingsComponent)
   .component('analyticsSettings', AnalyticsSettingsComponent)
   .directive('gvMetadataValidator', () => MetadataValidatorDirective)
 

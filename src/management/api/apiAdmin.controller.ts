@@ -125,12 +125,30 @@ class ApiAdminController {
       template: require('../../components/dialog/confirm.dialog.html'),
       clickOutsideToClose: true,
       locals: {
-        title: 'Would you like to deploy your API ?',
+        title: 'Would you like to deploy your API?',
         confirmButton: 'OK'
       }
     }).then(function (response) {
       if (response) {
         self.deploy(api);
+      }
+    });
+  }
+
+  showReviewConfirm(ev, api) {
+    ev.stopPropagation();
+    this.$mdDialog.show({
+      controller: 'DialogReviewController',
+      controllerAs: '$ctrl',
+      template: require('./review/review.dialog.html'),
+      clickOutsideToClose: true
+    }).then((response) => {
+      if (response) {
+        if (response.accept) {
+          this.ApiService.acceptReview(api, response.message);
+        } else {
+          this.ApiService.rejectReview(api, response.message);
+        }
       }
     });
   }

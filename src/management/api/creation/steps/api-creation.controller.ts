@@ -190,11 +190,11 @@ class ApiCreationController {
   /*
    API creation
    */
-  createAPI(deployAndStart) {
+  createAPI(deployAndStart, readyForReview?: boolean) {
     var alert = this.$mdDialog.confirm({
       title: 'Create API ?',
       content: 'The API ' + this.api.name + ' in version ' + this.api.version + ' will be created' + ((deployAndStart) ? ' and deployed.' : '.'),
-      ok: 'CREATE',
+      ok: 'CREATE' + (readyForReview? ' AND ASK FOR REVIEW':''),
       cancel: 'CANCEL'
     });
 
@@ -202,11 +202,11 @@ class ApiCreationController {
     this.$mdDialog
       .show(alert)
       .then(function () {
-        that._createAPI(deployAndStart);
+        that._createAPI(deployAndStart, readyForReview);
       });
   }
 
-  _createAPI(deployAndStart) {
+  _createAPI(deployAndStart, readyForReview?: boolean) {
     var _this = this;
     // clear API pages json format
     _.forEach(this.api.pages, function(page) {
@@ -224,6 +224,12 @@ class ApiCreationController {
     });
 
     // create API
+    if (deployAndStart) {
+      this.api.lifecycle_state = 'PUBLISHED';
+    }
+    if (readyForReview) {
+      this.api.workflow_state = 'IN_REVIEW';
+    }
     this.ApiService.import(null, this.api).then(function (api) {
       _this.vm.showBusyText = false;
       if (deployAndStart) {

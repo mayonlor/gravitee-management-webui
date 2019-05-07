@@ -34,40 +34,6 @@
         </div>
     </div>
 
-
-
-    <div class="gv-form">
-        <h2>Management</h2>
-        <div class="gv-form-content" layout="column">
-            <md-input-container class="md-block" flex>
-                <label>Title</label>
-                <input ng-model="$ctrl.Constants.management.title">
-            </md-input-container>
-            <h6>Security plans type available</h6>
-            <md-input-container class="gv-input-container-dense">
-                <md-checkbox ng-model="$ctrl.Constants.plan.security.keyless.enabled" aria-label="A">
-                    Keyless plans
-                </md-checkbox>
-            </md-input-container>
-            <md-input-container class="gv-input-container-dense">
-                <md-checkbox ng-model="$ctrl.Constants.plan.security.apikey.enabled" aria-label="A">
-                    Api-key plans
-                </md-checkbox>
-            </md-input-container>
-            <md-input-container class="gv-input-container-dense">
-                <md-checkbox ng-model="$ctrl.Constants.plan.security.oauth2.enabled" aria-label="A">
-                    Oauth2 plans
-                </md-checkbox>
-            </md-input-container>
-            <md-input-container class="gv-input-container-dense">
-                <md-checkbox ng-model="$ctrl.Constants.plan.security.jwt.enabled" aria-label="A">
-                    JWT plans
-                </md-checkbox>
-            </md-input-container>
-        </div>
-    </div>
-
-
     <div class="gv-form">
         <h2>Portal</h2>
         <div class="gv-form-content" layout="column">
@@ -130,9 +96,8 @@
                 <label>Max size upload file (bytes)</label>
                 <input type="number" min="0" ng-model="$ctrl.Constants.portal.uploadMedia.maxSizeInOctet">
             </md-input-container>
-        </div></div>
-
-
+        </div>
+    </div>
 
     <div class="gv-form">
         <h2>Theme</h2>
@@ -153,23 +118,8 @@
                 <label>Css file (for example themes/assets/gravitee.css)</label>
                 <input ng-model="$ctrl.Constants.theme.css">
             </md-input-container>
-        </div></div>
-
-
-
-    <div class="gv-form">
-        <h2>Schedulers</h2>
-        <div class="gv-form-content" layout="column">
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Tasks (in seconds)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.scheduler.tasks">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Notifications (in seconds)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.scheduler.notifications">
-            </md-input-container>
-        </div></div>
-
+        </div>
+    </div>
 
     <div class="gv-form">
         <h2>Documentation</h2>
@@ -177,49 +127,6 @@
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Documentation URL</label>
                 <input ng-model="$ctrl.Constants.documentation.url">
-            </md-input-container>
-        </div>
-    </div>
-
-    <div class="gv-form">
-        <h2>API Quality</h2>
-        <div class="gv-form-content" layout="column">
-            <md-input-container class="md-block" flex-gt-xs>
-                <md-checkbox ng-model="$ctrl.Constants.apiQualityMetrics.enabled" aria-label="Rating">
-                    Enable API Quality Metrics
-                </md-checkbox>
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Functional documentation weight (0 means not used)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.apiQualityMetrics.functionalDocumentationWeight">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Technical documentation weight (0 means not used)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.apiQualityMetrics.technicalDocumentationWeight">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Healthcheck weight (0 means not used)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.apiQualityMetrics.healthcheckWeight">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Description weight (0 means not used)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.apiQualityMetrics.descriptionWeight">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Description minimum length</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.apiQualityMetrics.descriptionMinLength">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Logo weight (0 means not used)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.apiQualityMetrics.logoWeight">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Views weight (0 means not used)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.apiQualityMetrics.viewsWeight">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Labels weight (0 means not used)</label>
-                <input type="number" min="0" ng-model="$ctrl.Constants.apiQualityMetrics.labelsWeight">
             </md-input-container>
         </div>
     </div>

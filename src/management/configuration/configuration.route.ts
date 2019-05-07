@@ -724,6 +724,22 @@ function configurationRouterConfig($stateProvider) {
         }
       }
     })
+    .state('management.settings.management', {
+      url: '/management',
+      component: 'managementSettings',
+      resolve: {
+        tags: (TagService: TagService) => TagService.list().then(response => response.data)
+      },
+      data: {
+        menu: null,
+        docs: {
+          page: 'management-configuration-management'
+        },
+        perms: {
+          only: ['management-settings-r']
+        }
+      }
+    })
     .state('management.settings.clientregistrationproviders', {
       abstract: true,
       url: '/client-registration'

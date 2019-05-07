@@ -74,6 +74,14 @@
               </li>
             </ul>
 
+          <div class="aui-nav-heading" ng-if="$ctrl.settingsMenu.managementSettings.perm">
+            <strong>Management</strong>
+          </div>
+          <ul class="aui-nav">
+            <li class="iterable-item" ui-sref-active="aui-nav-selected" ng-if="$ctrl.settingsMenu.managementSettings.perm">
+              <a class="execute" ui-sref="{{$ctrl.settingsMenu.managementSettings.goTo}}">Settings</a>
+            </li>
+          </ul>
 
             <div class="aui-nav-heading"
                  ng-if="$ctrl.settingsMenu.portalSettings.perm

@@ -17,9 +17,16 @@
 -->
 <section>
   <div class="gravitee-api-banner" ng-class="{'gravitee-api-banner-min': reducedMode}"
-    ng-hide="apiCtrl.apiIsSynchronized || apiCtrl.apiJustDeployed" ng-cloak="">
+       ng-hide="apiCtrl.apiIsSynchronized || apiCtrl.apiJustDeployed" ng-cloak="">
     <div class="gravitee-api-banner-content">
       API out of sync<span permission permission-only="'api-definition-u'">, <a href="" ng-click="apiCtrl.showDeployAPIConfirm($event, apiCtrl.api)">deploy your API</a></span>
+    </div>
+  </div>
+  <div class="gravitee-api-banner" ng-class="{'gravitee-api-banner-min': reducedMode}" ng-if="apiCtrl.api.workflow_state==='in_review'" ng-cloak="">
+    <div class="gravitee-api-banner-content" style="background-color: #d73a49">
+      API in review<span permission permission-only="'api-reviews-u'">,
+      <a href="" ng-click="apiCtrl.showReviewConfirm($event, apiCtrl.api)">accept/reject changes</a>
+    </span>
     </div>
   </div>
 
